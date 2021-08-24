@@ -16,7 +16,7 @@ services:
     volumes:
       - .:/spm
     ports:
-      - "3006:3000"
+      - "8000:3000"
     depends_on:
       - db
     stdin_open: true
