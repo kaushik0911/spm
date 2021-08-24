@@ -1,0 +1,2 @@
+class Mutual < ApplicationRecord
+end
