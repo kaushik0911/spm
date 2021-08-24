@@ -4,7 +4,7 @@ class CreateVaults < ActiveRecord::Migration[5.2]
       t.string :username
       t.string :password
       t.text :note
-      t.references :users
+      t.references :user
       t.timestamps
     end
   end

@@ -7,13 +7,28 @@ class Api::V1::UsersController < ApplicationController
     if user.save
       status = :created
     else
-      user = User.new
+      user   = User.new
       status = :bad_request
     end
 
     render json: {
       username: user.username,
-      email: user.email
+      email: user.email,
+    }, status: status
+  end
+
+  def password_token
+    user  = User.find_by(id: params[:user_id])
+    user.password_token = SecureRandom.hex
+    if user.presents?
+      status = :created
+    else
+      user = User.new
+      status = :bad_request
+    end
+
+    render json: {
+      password_token: user.password_token,
     }, status: status
   end
 
