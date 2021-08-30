@@ -68,3 +68,9 @@ gem 'activeadmin'
 gem 'devise'
 
 gem 'rack-cors'
+
+gem 'omniauth'
+gem 'devise_token_auth'
+
+gem 'graphql'
+gem 'graphiql-rails', group: :development
